@@ -2,7 +2,6 @@
 mod Bobby {
     use starknet::ContractAddress;
     use openzeppelin::token::erc20::{ERC20Component, ERC20HooksEmptyImpl};
-    use openzeppelin::token::erc20::erc20::ERC20Component::InternalTrait;
 
     use ethdam::components::paris::paris::ParisComponent;
 
@@ -15,6 +14,7 @@ mod Bobby {
 
     #[abi(embed_v0)]
     impl ERC20MixingImpl = ERC20Component::ERC20MixinImpl<ContractState>;
+    impl ERC20InternalImpl = ERC20Component::InternalImpl<ContractState>;
 
     #[abi(embed_v0)]
     impl ParisImpl = ParisComponent::ParisImpl<ContractState>;

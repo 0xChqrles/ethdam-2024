@@ -1,9 +1,9 @@
 #[starknet::component]
 mod ParisComponent {
+    use starknet::{ContractAddress, get_caller_address};
     use openzeppelin::token::erc20::erc20::ERC20Component::InternalTrait;
     use openzeppelin::token::erc20::interface::IERC20;
     use openzeppelin::token::erc20::ERC20Component;
-    use starknet::{ ContractAddress, get_caller_address };
 
     use ethdam::components::paris::interface;
 
